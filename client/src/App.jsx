@@ -11,7 +11,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className='lg:px-8'>
        <BrowserRouter>
       <div>
         <Navbar />
