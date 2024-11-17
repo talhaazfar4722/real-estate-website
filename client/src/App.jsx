@@ -12,7 +12,7 @@ function App() {
 
 
   return (
-    <div className='lg:px-8'>
+    <div className=''>
        <BrowserRouter>
       <div>
         <Navbar />
