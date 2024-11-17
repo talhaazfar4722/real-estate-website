@@ -13,6 +13,7 @@ export default function Home() {
   });
 
   return (
+    <div className='min-h-screen'>
     <div className='bg-banner-bg w-full h-[500px] bg-center bg-cover flex justify-center items-center'>
    <div className='text-white '>
         <p className='text-lg ' >{text}</p>
@@ -119,6 +120,7 @@ export default function Home() {
        </form>
       </div>
     </div>
+  </div>
   </div>
   )
 }

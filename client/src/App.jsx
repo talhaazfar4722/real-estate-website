@@ -6,6 +6,7 @@ import SignUp from './pages/SignUp';
 import About from './pages/About';
 import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
+import FooterComp from './components/FooterComp';
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/profile' element={<Profile />} />
       </Routes>
+      <FooterComp/>
       </BrowserRouter>
     </div>
   );

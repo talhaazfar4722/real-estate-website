@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 export default function Navbar() {
   return (
+    <div className='bg-banner-bg'>
     <div className='w-full h-[60px] border-b-[1px] border-gray-800 text-white bg-gray-800 opacity-80'>
       <div className='max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between'>
        <Link to='/'><h1 className='text-2xl uppercase font-extrabold'>Real Estate</h1></Link> 
@@ -23,6 +24,7 @@ export default function Navbar() {
             <FiMenu className='text-3xl'/>
         </div> */}
       </div>
+    </div>
     </div>
   )
 }
