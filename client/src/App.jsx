@@ -1,22 +1,32 @@
-import React from 'react'
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import Home from './pages/Home'
-import SignIn from './pages/SignIn'
-import SignUp from './pages/SignUp'
-import About from './pages/About'
-import Profile from './pages/Profile'
-export default function App() {
+import React from 'react';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import Home from './pages/Home';
+import SignIn from './pages/SignIn';
+import SignUp from './pages/SignUp';
+import About from './pages/About';
+import Profile from './pages/Profile';
+import Navbar from './components/Navbar';
+
+function App() {
+
+
   return (
-    <div className='px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]'>
-      <BrowserRouter>
+    <div>
+       <BrowserRouter>
+      <div>
+        <Navbar />
+      </div>
+
       <Routes>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/sign-in' element={<SignIn/>}/>
-        <Route path='/sign-up' element={<SignUp/>}/>
-        <Route path='/about' element={<About/>}/>
-        <Route path='/profile' element={<Profile/>}/>
+        <Route path='/' element={<Home/>} />
+        <Route path='/sign-in' element={<SignIn />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/profile' element={<Profile />} />
       </Routes>
       </BrowserRouter>
     </div>
-  )
+  );
 }
+
+export default App;
