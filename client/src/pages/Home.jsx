@@ -1,5 +1,6 @@
 import React from 'react'
 import {useTypewriter, cursor} from 'react-simple-typewriter'
+import Booking from '../components/Booking';
 
 export default function Home() {
 
@@ -121,6 +122,10 @@ export default function Home() {
       </div>
     </div>
   </div>
+
+<h1>home</h1>
+  <Booking/>
+<h1>home</h1>
   </div>
   )
 }
