@@ -6,6 +6,7 @@ import {
   signInSuccess,
   signInFailure,
 } from '../redux/user/userSlice';
+import OAuth from '../components/OAuth';
 
 export default function SignIn() {
 
@@ -52,16 +53,18 @@ export default function SignIn() {
         <div>
         <h1 className='text-3xl text-white text-semibold'>Sign in</h1>
         <form onSubmit={handleSubmit}  className='flex flex-col gap-5 text-center items-center justify-center pt-10 text-white '>
-          <input type="email" placeholder='email' className='border p-1 bg-transparent w-56 sm:w-96' id='email' onChange={handleChange}/>
-          <input type="password" placeholder='password' className='border p-1 bg-transparent w-56 sm:w-96' id='password' onChange={handleChange}/>
+          <input type="email" placeholder='email' className='border p-1 bg-transparent w-56 sm:w-96' id='email' required onChange={handleChange}/>
+          <input type="password" placeholder='password' className='border p-1 bg-transparent w-56 sm:w-96' id='password' required onChange={handleChange}/>
           <button  disabled={loading}  className='border-2 p-2  hover:bg-white hover:text-black disabled:opacity-50'>  
             {loading ? 'Loading...' : 'Sign in'}
           </button>
+          <OAuth/>
         </form>
         <div className='p-4'>
           <p className='text-white'>Dont have an account?</p>
          <Link to='/sign-up'><p className='text-blue-600 hover:underline'>Sign up</p></Link>
         </div>
+        
         <div className=''>
         {error && <p className='text-red-500 mt-5'>{error}</p>}
         </div>
