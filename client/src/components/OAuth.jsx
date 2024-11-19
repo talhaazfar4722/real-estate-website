@@ -1,6 +1,6 @@
 import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 import { app } from '../firebase';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { signInSuccess } from '../redux/user/userSlice';
 import { useNavigate } from 'react-router-dom';
 import {FaGoogle} from 'react-icons/fa'
@@ -10,11 +10,9 @@ export default function OAuth() {
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { loading, error } = useSelector((state) => state.user);
 
   const handleGoogleClick = async () => {
     try {
-        
       const provider = new GoogleAuthProvider();
       const auth = getAuth(app);
       const result = await signInWithPopup(auth, provider);
@@ -32,7 +30,8 @@ export default function OAuth() {
       const data = await res.json();
       dispatch(signInSuccess(data));
       navigate('/');
-
+    console.log(result);
+    
     } catch (error) {
       console.log('could not sign in with google', error);
     }
@@ -41,10 +40,10 @@ export default function OAuth() {
     <button
       onClick={handleGoogleClick}
       type='button'
-      disabled={loading}
-      className='border-2 rounded-lg bg-red-700 text-white p-2 hover:opacity-75 disabled:opacity-50'
+      className='flex gap-2 items-center border-2 rounded-lg bg-red-700 text-white p-2 hover:opacity-75'
     >
-        {loading ? 'Loading...' : 'Continue with Google'}
+      <FaGoogle/>
+      Continue with Google
     </button>
   );
 }
