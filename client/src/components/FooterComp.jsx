@@ -3,9 +3,9 @@ import { FaFacebook, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 
 export default function FooterComp() {
   return (
-    <div className='bg-banner-bg'>
+    <div className='bg-banner-bg bg-cover bg-cen'>
       
-    <div className=' text-white bg-gray-800 opacity-80'>
+    <div className=' text-white bg-black opacity-70'>
        <div className='sm:flex justify-between items-center p-5 sm:p-10 md:p-20 text-center'>
        
         <div className='leading-7 '>

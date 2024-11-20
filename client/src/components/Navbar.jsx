@@ -1,40 +1,88 @@
 import React from 'react'
-import { FaSearch } from 'react-icons/fa'
-import {FiMenu} from 'react-icons/fi'
-import {Link} from 'react-router-dom'
-import { useSelector } from 'react-redux';
+import {HiHome} from 'react-icons/hi'
 import {Avatar, Button, Dropdown, TextInput} from 'flowbite-react'
+import { Link } from 'react-router-dom'
+import { FaSearch } from 'react-icons/fa'
+import { useDispatch, useSelector } from 'react-redux'
+import { deleteUserFailure, deleteUserSuccess, signOutUserStart } from '../redux/user/userSlice'
 
 export default function Navbar() {
 
   const { currentUser } = useSelector((state) => state.user);
+  const dispatch = useDispatch();
+
+  // signout
+  const handleSignOut = async () => {
+    try {
+      dispatch(signOutUserStart())
+      const res = await fetch('/api/auth/signout');
+      const data = await res.json();
+      if (data.success === false) {
+        dispatch(deleteUserFailure(data.message));
+        return;
+      }
+      dispatch(deleteUserSuccess(data));
+    } catch (error) {
+      dispatch(deleteUserFailure(data.message));
+    }
+  }
 
   return (
-    <div className='bg-banner-bg'>
-    <div className='w-full h-[60px] border-b-[1px] border-gray-800 text-white bg-gray-800 opacity-80'>
-      <div className='max-w-screen-2xl h-full mx-auto px-4 flex items-center justify-between'>
-       <Link to='/'><h1 className='text-2xl uppercase font-extrabold'>Real Estate</h1></Link> 
-       <form className='p-1 sm:border rounded-xl flex items-center'>
-          <input type="text" placeholder='Search...' className='bg-transparent border-none text-white  focus:outline-none hidden sm:inline sm:w-56 md:w-96 px-2' />
-          <FaSearch size={20} className='text-white'/>
+    <div className='hidden lg:inline '>
+    <div className='text-white bg-black p-1 '>
+
+    <div className='flex justify-between lg:justify-around items-center '>
+      <div className='flex gap-2'>
+       <div className='text-2xl'><HiHome/></div>
+       <Link to='/'><div className='font-bold'><h1>Properties</h1></div></Link>
+      </div>
+      <div className=''>
+        <ul className='flex uppercase gap-10 text-sm'>
+        <Link to='/'><li>Home</li></Link>
+          <li>About</li>
+          <li>Blog</li>
+          <li>Maps</li>
+          <Dropdown
+            inline
+            label={
+              <h1>TOOLS</h1>
+            }
+          >
+            <Dropdown.Item>Home Loan Calculator</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>Area Unit Converter</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>Land Records</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>Construction Cost Calculator</Dropdown.Item>
+            <Dropdown.Divider />
+            </Dropdown>
+            <Dropdown
+            inline
+            label={
+              <h1>MORE</h1>
+            }
+          >
+            <Dropdown.Item>Forum</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>Index</Dropdown.Item>
+            <Dropdown.Divider />
+            <Dropdown.Item>Trends</Dropdown.Item>
+            <Dropdown.Divider />
+            </Dropdown>
+            <form className='flex border items-center'>
+          <input type="text" className='bg-transparent w-20 h-5 border-none focus:outline-none'  />
+          <FaSearch size={15}/>
         </form>
-        <div>
-        {/* <Link to='/profile'>
-            {currentUser ? (
-              <img className='rounded-full h-7 w-7 object-cover' src={currentUser.avatar} alt='profile' />
-            ) : (
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
-            )}
-          </Link> */}
-
-
-           {/* if user exist it shows pic while if it doesnt exist it shows sign in button */}
-           {currentUser ? (
+        </ul>
+      </div>
+       {/* if user exist it shows pic while if it doesnt exist it shows sign in button */}
+       {currentUser ? (
           <Dropdown
             arrowIcon={false}
             inline
             label={
-              <Avatar alt='user' img={currentUser.avatar} rounded />
+              <Avatar alt='user' img={currentUser.avatar} rounded/>
             }
           >
             <Dropdown.Header>
@@ -42,31 +90,24 @@ export default function Navbar() {
               <span className='block text-sm font-medium truncate'>{currentUser.email}</span>
             </Dropdown.Header>
            
-            <Link to='/profile'>
-              <Dropdown.Item>My Account</Dropdown.Item>
+            <Link to='/profile?tab=account'>
+              <Dropdown.Item>Profile</Dropdown.Item>
             </Link>
-            
             <Dropdown.Divider />
-            <Link  to='/'>
-              <Dropdown.Item>logout</Dropdown.Item>
-            </Link>
+              <Dropdown.Item onClick={handleSignOut} >logout</Dropdown.Item>
             <Dropdown.Divider />
             
           </Dropdown>
         ) : (
           <Link to='/sign-in'>
-            <button type='button' className='border-2 p-2 rounded-lg hover:text-black hover:bg-white ' >
+            <button type='button' className='border-2 p-1 px-2 rounded-lg hover:text-black hover:bg-white '  >
               Sign In
             </button>
           </Link>
         )}
 
+    </div>
 
-        </div>
-        {/* <div className='inline-flex sm:hidden'>
-            <FiMenu className='text-3xl'/>
-        </div> */}
-      </div>
     </div>
     </div>
   )

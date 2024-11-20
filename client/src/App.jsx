@@ -8,15 +8,17 @@ import Profile from './pages/Profile';
 import Navbar from './components/Navbar';
 import FooterComp from './components/FooterComp';
 import PrivateRoute from './components/PrivateRoute';
+import Navbar2 from './components/Navbar2';
 
 function App() {
 
 
   return (
-    <div className=''>
+    <div >
        <BrowserRouter>
       <div>
         <Navbar />
+        <Navbar2/>
       </div>
 
       <Routes>

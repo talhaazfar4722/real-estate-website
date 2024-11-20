@@ -5,5 +5,14 @@
 
 *{
     font-family: outfit;
+    
+}
+body{
+    background-color: black;
 }
 
+.vertical-line {
+    border-left: 1px solid black; /* Change color and thickness as needed */
+    height: 30px; /* Adjust height as needed */
+    margin: 0 16px; /* Adjust spacing as needed */
+  }
