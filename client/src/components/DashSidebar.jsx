@@ -82,6 +82,15 @@ export default function DashSidebar() {
               List Property
             </Sidebar.Item>
           </Link>
+          <Link to='/profile?tab=all-listing'>
+            <Sidebar.Item
+              active={tab === 'all-listing'}
+              icon={HiPlus}
+              as='div'
+            >
+              All Listings
+            </Sidebar.Item>
+          </Link>
        
           {/* {currentUser.isAdmin && (
             <>

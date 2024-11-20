@@ -4,6 +4,7 @@ import { useLocation } from 'react-router-dom';
 import DashSidebar from '../components/DashSidebar';
 import DashAccount from '../components/DashAccount';
 import CreateListing from '../components/CreateListing';
+import UserListings from '../components/UserListings';
 // import DashSidebar from '../components/DashSidebar';
 // import DashProfile from '../components/DashProfile';
 // import DashPosts from '../components/DashPosts';
@@ -32,6 +33,8 @@ export default function DashBoard() {
    {tab === 'account' && <DashAccount />}
    {/* create-listing... */}
    {tab === 'create-listing' && <CreateListing />}
+   {/* user Listings... */}
+   {tab === 'all-listing' && <UserListings />}
   </div>
   )
 }
