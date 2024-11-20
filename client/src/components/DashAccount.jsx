@@ -94,7 +94,7 @@ export default function DashAccount() {
   return (
     <div className='w-full'>
     <div className="flex flex-col p-1 md:p-5 lg:p-10 w-full">  
-    <div className="bg-white shadow-lg rounded-lg flex items-center w-full">  
+    <div className="bg-white shadow-lg rounded-lg flex items-center w-full p-5">  
       <img
       src={currentUser.avatar}
       alt="user"
@@ -108,8 +108,6 @@ export default function DashAccount() {
   </div>
   
  
-
-
 <div className='mt-2 md:mt-5 lg:mt-10'>
 <div className='bg-white rounded-lg lg:p-4 p-1'>
     <h1 className='text-2xl sm:text-3xl font-semibold text-center p-5 '>Account Information</h1>
