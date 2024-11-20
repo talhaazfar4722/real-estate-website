@@ -1,5 +1,5 @@
 import { Sidebar } from 'flowbite-react';
-import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup, HiAnnotation,  HiChartPie, } from 'react-icons/hi';
+import { HiUser, HiArrowSmRight, HiDocumentText, HiOutlineUserGroup, HiAnnotation,  HiChartPie, HiPlus, } from 'react-icons/hi';
 import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import { deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart } from '../redux/user/userSlice'
@@ -71,6 +71,15 @@ export default function DashSidebar() {
               as='div'
             >
               My Account
+            </Sidebar.Item>
+          </Link>
+          <Link to='/profile?tab=create-listing'>
+            <Sidebar.Item
+              active={tab === 'create-listing'}
+              icon={HiPlus}
+              as='div'
+            >
+              List Property
             </Sidebar.Item>
           </Link>
        

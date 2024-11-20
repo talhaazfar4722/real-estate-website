@@ -92,23 +92,27 @@ export default function DashAccount() {
   
 
   return (
-    <div>
-    <div className="flex flex-col p-2 md:p-5 lg:p-10 b-10">  <div className="bg-white shadow-md rounded-lg md:w-[500px] lg:w-[950px] flex items-center p-1 lg:p-4">  <img
+    <div className='w-full'>
+    <div className="flex flex-col p-1 md:p-5 lg:p-10 w-full">  
+    <div className="bg-white shadow-lg rounded-lg flex items-center w-full">  
+      <img
       src={currentUser.avatar}
       alt="user"
       className="rounded-full w-20 h-20 object-cover mr-2 lg:mr-4"  />
-    <div className="flex flex-col">  <span className="block font-medium text-xl">@{currentUser.username}</span>
-      <span className="block md:text-lg  truncate">
+    <div className="flex flex-col"> 
+     <span className="block font-medium text-xl">@{currentUser.username}</span>
+      <span className="block text-lg  truncate">
         {currentUser.email}
       </span>
     </div>
   </div>
+  
  
 
 
 <div className='mt-2 md:mt-5 lg:mt-10'>
 <div className='bg-white rounded-lg lg:p-4 p-1'>
-    <h1 className='text-center p-5 font-bold text-xl'>Account Information</h1>
+    <h1 className='text-2xl sm:text-3xl font-semibold text-center p-5 '>Account Information</h1>
     <div>
     <form onSubmit={handleSubmit} className='flex flex-col gap-4'>
       <p>Username</p>
