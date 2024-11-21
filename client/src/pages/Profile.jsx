@@ -5,13 +5,9 @@ import DashSidebar from '../components/DashSidebar';
 import DashAccount from '../components/DashAccount';
 import CreateListing from '../components/CreateListing';
 import UserListings from '../components/UserListings';
-// import DashSidebar from '../components/DashSidebar';
-// import DashProfile from '../components/DashProfile';
-// import DashPosts from '../components/DashPosts';
-// import DashUsers from '../components/DashUsers';
-// import DashComments from '../components/DashComments';
-// import DashboardComp from '../components/DashboardComp';
-// import DashProjects from '../components/DashProjects';
+
+
+
 
 export default function DashBoard() {
   const location = useLocation();
@@ -23,6 +19,8 @@ export default function DashBoard() {
       setTab(tabFromUrl);
     }
   }, [location.search]);
+
+  
   return (
     <div className='min-h-screen flex flex-col md:flex-row'>
     <div className='md:w-56'>
@@ -35,6 +33,7 @@ export default function DashBoard() {
    {tab === 'create-listing' && <CreateListing />}
    {/* user Listings... */}
    {tab === 'all-listing' && <UserListings />}
+
   </div>
   )
 }

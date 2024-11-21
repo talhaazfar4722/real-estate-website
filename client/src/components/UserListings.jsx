@@ -9,6 +9,17 @@ export default function UserListings() {
     const location = useLocation();
     const dispatch = useDispatch();
     const { currentUser } = useSelector((state) => state.user);
+    
+
+    const [tab, setTab] = useState('');
+
+    useEffect(() => {
+      const urlParams = new URLSearchParams(location.search);
+      const tabFromUrl = urlParams.get('tab');
+      if (tabFromUrl) {
+        setTab(tabFromUrl);
+      }
+    }, [location.search]);
 
     // show listings
     useEffect(() => {
@@ -52,7 +63,7 @@ export default function UserListings() {
      
 
   return (
-    <div className='text-white lg:p-10 p-1 md:p-5 w-full'>
+    <div className='text-white lg:p-10 p-1 w-full'>
       <p className='text-red-700 '>
         {showListingsError ? 'Error showing listings' : ''}
       </p>
@@ -81,7 +92,9 @@ export default function UserListings() {
   
               <div className='flex gap-2 sm:gap-5   '>
                 <button className='text-red-700 uppercase text-sm sm:text-lg'  onClick={() => handleListingDelete(listing._id)}>Delete</button>
-                <button className='text-green-700 uppercase text-sm sm:text-lg'>Edit</button>
+                <Link to={`/update-listing/${listing._id}`}>
+                  <button className='text-green-700 uppercase'>Edit</button>
+                </Link>
               </div>
             </div>
           ))}
