@@ -10,6 +10,7 @@ import FooterComp from './components/FooterComp';
 import PrivateRoute from './components/PrivateRoute';
 import Navbar2 from './components/Navbar2';
 import UpdateListing from './pages/UpdateListing';
+import Listing from './pages/Listing';
 
 
 
@@ -29,6 +30,7 @@ function App() {
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/about' element={<About />} />
+        <Route path='/listing/:listingId' element={<Listing />} />
         <Route element={<PrivateRoute />}>
         <Route path='/profile' element={<Profile />} />
         <Route
