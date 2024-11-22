@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {HiHome} from 'react-icons/hi'
 import {Avatar, Button, Dropdown, TextInput} from 'flowbite-react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { FaSearch } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
 import { deleteUserFailure, deleteUserSuccess, signOutUserStart } from '../redux/user/userSlice'
@@ -26,6 +26,24 @@ export default function Navbar() {
       dispatch(deleteUserFailure(data.message));
     }
   }
+
+  // searching functionality
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    urlParams.set('searchTerm', searchTerm);
+    const searchQuery = urlParams.toString();
+    navigate(`/search?${searchQuery}`);
+  };
+  useEffect(() => {
+    const urlParams = new URLSearchParams(location.search);
+    const searchTermFromUrl = urlParams.get('searchTerm');
+    if (searchTermFromUrl) {
+      setSearchTerm(searchTermFromUrl);
+    }
+  }, [location.search]);
 
   return (
     <div className='hidden lg:inline '>
@@ -70,10 +88,18 @@ export default function Navbar() {
             <Dropdown.Item>Trends</Dropdown.Item>
             <Dropdown.Divider />
             </Dropdown>
-            <form className='flex border items-center'>
-          <input type="text" className='bg-transparent w-20 h-5 border-none focus:outline-none'  />
-          <FaSearch size={15}/>
+
+            <form onSubmit={handleSubmit} className='flex border items-center'>
+          <input
+           type="text"
+           className='bg-transparent w-20 h-5 border-none focus:outline-none'
+           value={searchTerm}
+           onChange={(e) => setSearchTerm(e.target.value)}  />
+         <button>
+          <FaSearch size={15} />
+          </button>
         </form>
+
         </ul>
       </div>
        {/* if user exist it shows pic while if it doesnt exist it shows sign in button */}
