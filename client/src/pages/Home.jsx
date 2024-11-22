@@ -10,6 +10,7 @@ import img_1 from '../assets/img_1.jpg'
 import img_2 from '../assets/img_2.jpeg'
 import img_3 from '../assets/img_3.jpeg'
 import BrowseProperties from '../components/BrowseProperties';
+import RentPlaces from '../components/RentPlaces';
 
 SwiperCore.use([Navigation, Pagination, Scrollbar, A11y]);
 
@@ -100,6 +101,10 @@ export default function Home() {
     {/* Browse Properties */}
     <div>
       <BrowseProperties/>
+    </div>
+    {/* Rent Properties */}
+    <div>
+      <RentPlaces/>
     </div>
 
 

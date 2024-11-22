@@ -14,10 +14,10 @@ export default function BrowseProperties() {
         <h1 className='text-2xl font-semibold'>Browse Properties</h1>
       </div>
 {/* 3 divs for homes commercial and plots */}
-<div className='main lg:flex justify-between '>
+<div className='main flex flex-wrap justify-between gap-4 '>
 
-    <div className='border-2 flex flex-col border-yellow-500 rounded-lg'> {/* Added flex-col to stack items vertically */}
-        <div className='flex items-center gap-2 p-2'> {/* Wrap the icon and Homes heading in a separate div */}
+    <div className='bg-white flex flex-col  rounded-lg w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'> {/* Added flex-col to stack items vertically */}
+        <div className='flex items-center gap-2 p-2 border-b-2'> {/* Wrap the icon and Homes heading in a separate div */}
             <HiHome className='text-2xl' />  
             <h1 className='text-xl font-semibold'>Homes</h1> {/* Added margin-left for spacing */}
         </div>
@@ -29,7 +29,7 @@ export default function BrowseProperties() {
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       loop={true}
-      className='h-[160px] w-96'
+      className='h-[160px] w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'
     >
       <SwiperSlide>
        <div className=' items-center w-full h-full pt-5 '>
@@ -46,7 +46,7 @@ export default function BrowseProperties() {
        </div>
       </SwiperSlide>
       <SwiperSlide>
-      <div className=' items-center w-full h-full pt-5 '>
+       <div className=' items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
@@ -60,50 +60,40 @@ export default function BrowseProperties() {
        </div>
       </SwiperSlide>
       <SwiperSlide>
-      <div className=' items-center w-full h-full pt-5 '>
+       <div className=' items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+        <div className='flex justify-around items-center pt-5'>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
             <div className='border-2 rounded-md border-black p-2'>3 marla</div>
         </div>
        </div>
       </SwiperSlide>
+      
     </Swiper>
         </div>
     </div>
-
-    {/* slide-2 */}
-    <div className='border-2 flex flex-col border-yellow-500 rounded-lg'>
-        <div className='flex items-center gap-2 p-2'> 
-            <FaMapMarkerAlt className='text-2xl' />  
-            <h1 className='text-xl font-semibold'>Plots</h1> 
+    <div className='border-2 flex flex-col bg-white rounded-lg w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'> {/* Added flex-col to stack items vertically */}
+        <div className='flex items-center gap-2 p-2 border-b-2'> {/* Wrap the icon and Homes heading in a separate div */}
+            <HiHome className='text-2xl' />  
+            <h1 className='text-xl font-semibold'>Homes</h1> {/* Added margin-left for spacing */}
         </div>
 
          {/* swiper */}
-        <div>
+        <div >
       <Swiper
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       loop={true}
-      className='h-[160px] w-96'
+      className='h-[160px] w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'
     >
       <SwiperSlide>
        <div className=' items-center w-full h-full pt-5 '>
-        <div className='flex justify-center lg:gap-12 items-center '>
-            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
-        </div>
-        <div className='flex justify-center lg:gap-12 items-center pt-5'>
-            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
-        </div>
-       </div>
-      </SwiperSlide>
-      <SwiperSlide>
-      <div className='items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
@@ -117,50 +107,54 @@ export default function BrowseProperties() {
        </div>
       </SwiperSlide>
       <SwiperSlide>
-      <div className='items-center w-full h-full pt-5 '>
+       <div className=' items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+        <div className='flex justify-around items-center pt-5'>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
             <div className='border-2 rounded-md border-black p-2'>3 marla</div>
         </div>
        </div>
       </SwiperSlide>
+      <SwiperSlide>
+       <div className=' items-center w-full h-full pt-5 '>
+        <div className='flex justify-around items-center '>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+        <div className='flex justify-around items-center pt-5'>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+       </div>
+      </SwiperSlide>
+      
     </Swiper>
         </div>
     </div>
-
-    {/* slide 3 */}
-    <div className='border-2 flex flex-col border-yellow-500 rounded-lg'> 
-        <div className='flex items-center gap-2 p-2'>
-            <FaShoppingCart className='text-2xl' />  
-            <h1 className='text-xl font-semibold'>Commercial</h1>
+    <div className='border-2 flex flex-col bg-white rounded-lg w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'> {/* Added flex-col to stack items vertically */}
+        <div className='flex items-center gap-2 p-2 border-b-2'> {/* Wrap the icon and Homes heading in a separate div */}
+            <HiHome className='text-2xl' />  
+            <h1 className='text-xl font-semibold'>Homes</h1> {/* Added margin-left for spacing */}
         </div>
 
          {/* swiper */}
-        <div>
+        <div >
       <Swiper
       navigation
       pagination={{ clickable: true }}
       scrollbar={{ draggable: true }}
       loop={true}
-      className='h-[160px] w-96'
+      className='h-[160px] w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'
     >
       <SwiperSlide>
        <div className=' items-center w-full h-full pt-5 '>
-        <div className='flex justify-center lg:gap-12 items-center '>
-            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
-        </div>
-        <div className='flex justify-center lg:gap-12 items-center pt-5'>
-            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
-            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
-        </div>
-       </div>
-      </SwiperSlide>
-      <SwiperSlide>
-      <div className=' items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
@@ -174,18 +168,38 @@ export default function BrowseProperties() {
        </div>
       </SwiperSlide>
       <SwiperSlide>
-      <div className=' items-center w-full h-full pt-5 '>
+       <div className=' items-center w-full h-full pt-5 '>
         <div className='flex justify-around items-center '>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+        <div className='flex justify-around items-center pt-5'>
             <div className='border-2 rounded-md border-black p-2'>5 marla</div>
             <div className='border-2 rounded-md border-black p-2'>10 marla</div>
             <div className='border-2 rounded-md border-black p-2'>3 marla</div>
         </div>
        </div>
       </SwiperSlide>
+      <SwiperSlide>
+       <div className=' items-center w-full h-full pt-5 '>
+        <div className='flex justify-around items-center '>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+        <div className='flex justify-around items-center pt-5'>
+            <div className='border-2 rounded-md border-black p-2'>5 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>10 marla</div>
+            <div className='border-2 rounded-md border-black p-2'>3 marla</div>
+        </div>
+       </div>
+      </SwiperSlide>
+      
     </Swiper>
         </div>
     </div>
-  
+
 
 
 
