@@ -16,7 +16,7 @@ export default function BrowseProperties() {
 {/* 3 divs for homes commercial and plots */}
 <div className='main flex flex-wrap justify-between gap-4 '>
 
-    <div className='bg-white flex flex-col  rounded-lg w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'> {/* Added flex-col to stack items vertically */}
+    <div className='border-2 bg-white flex flex-col  rounded-lg w-full sm:w-[330px] md:w-[360px] lg:w-[380px]'> {/* Added flex-col to stack items vertically */}
         <div className='flex items-center gap-2 p-2 border-b-2'> {/* Wrap the icon and Homes heading in a separate div */}
             <HiHome className='text-2xl' />  
             <h1 className='text-xl font-semibold'>Homes</h1> {/* Added margin-left for spacing */}
