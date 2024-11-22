@@ -12,7 +12,7 @@ const Navbar2 = () => {
 
   return (
     <div className='hidden lg:inline'>
-      <div className='bg-white flex  px-20 p-2 items-center text-sm'>
+      <div className='bg-white flex  px-20 p-2 items-center text-sm border-2 border-red-600'>
         <Link to='/'>  <h1 className='flex gap-2 font-bold text-xl items-center'><HiHome className='text-2xl' />Prime Estate</h1></Link>
         <div className='flex'>
           <h1 onClick={toggleNavbar} className='cursor-pointer ml-20 mr-10 uppercase flex items-center '>Buy <HiChevronRight /></h1>

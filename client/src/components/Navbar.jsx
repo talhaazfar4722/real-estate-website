@@ -47,7 +47,7 @@ export default function Navbar() {
 
   return (
     <div className='hidden lg:inline '>
-    <div className='text-white bg-black p-1 '>
+    <div className='text-white bg-black p-1 border-2 border-red-600'>
 
     <div className='flex justify-between lg:justify-around items-center '>
       <div className='flex gap-2'>
